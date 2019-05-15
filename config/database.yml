@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: development
+  password: development
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rails-react-heroku_development
+
+test:
+  <<: *default
+  database: rails-react-heroku_test
+
+production:
+  <<: *default
+  database: rails-react-heroku_production
+  username: rails-react-heroku
+  password: <%= ENV['RAILS-REACT-HEROKU_DATABASE_PASSWORD'] %>
