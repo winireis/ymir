@@ -7,14 +7,14 @@ default: &default
 
 development:
   <<: *default
-  database: rails-react-heroku_development
+  database: ymir_development
 
 test:
   <<: *default
-  database: rails-react-heroku_test
+  database: ymir_test
 
 production:
   <<: *default
-  database: rails-react-heroku_production
-  username: rails-react-heroku
+  database: ymir_production
+  username: ymir
   password: <%= ENV['RAILS-REACT-HEROKU_DATABASE_PASSWORD'] %>
